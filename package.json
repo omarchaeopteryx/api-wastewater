@@ -15,5 +15,21 @@
     "jade": "~1.11.0",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.2"
-  }
+  },
+  "description": "An API for the EPI wastewater dataset.",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omarchaeopteryx/api-wastewater.git"
+  },
+  "keywords": [
+    "wastewater"
+  ],
+  "author": "omar-malik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/omarchaeopteryx/api-wastewater/issues"
+  },
+  "homepage": "https://github.com/omarchaeopteryx/api-wastewater#readme"
 }
