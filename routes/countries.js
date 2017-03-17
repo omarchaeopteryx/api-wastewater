@@ -8,8 +8,11 @@ var myDataRaw = require('../public/data.json') // This is an array of JSON objec
 
 // Matches the name of the state to the data object:
 var countryFinder = function(givenCountry, myDataRaw) {
+
+  var givenCountryDowncase = givenCountry.toLowerCase();
+
   for (var i in myDataRaw) {
-    if (myDataRaw[i].country === givenCountry) { return myDataRaw[i]};
+    if (myDataRaw[i].country.toLowerCase() === givenCountryDowncase) { return myDataRaw[i]};
     }
 };
 
@@ -18,18 +21,19 @@ router.get('/', function(req, res, next) {
   res.send(myDataRaw);
 });
 
-router.get('/FRA', function(req, res, next) {
-  res.send(countryFinder("France", myDataRaw))
-
-});
-
-router.get('/USA', function(req, res, next) {
-  res.send('United States of America: datum');
-});
-
-router.get('/ZAF', function(req, res, next) {
-  res.send('South Africa: datum');
-});
+// TO-DO: add country codes as valid querying technique.
+// router.get('/FRA', function(req, res, next) {
+//   res.send(countryFinder("France", myDataRaw))
+//
+// });
+//
+// router.get('/USA', function(req, res, next) {
+//   res.send('United States of America: datum');
+// });
+//
+// router.get('/ZAF', function(req, res, next) {
+//   res.send('South Africa: datum');
+// });
 
 router.get('/:id', function(req, res) {
   // res.send({ country: req.params.id, Qstr: req.query.qstr });
